@@ -74,7 +74,7 @@
       {% endif %}
     {% endwith %}
 
-    <form method="POST">
+    <form method="POST" action="{{ url_for('main.login') }}">
       <input type="email" name="email" placeholder="Seu email" required />
       <input type="password" name="senha" placeholder="Sua senha" required />
       <button type="submit">Entrar</button>

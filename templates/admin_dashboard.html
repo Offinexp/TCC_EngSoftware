@@ -66,12 +66,12 @@
     <h1>Painel Admin</h1>
     <div class="user-info">
       Bem-vindo, {{ current_user.nome }} ({{ current_user.nivel_acesso }})
-      <a href="{{ url_for('logout') }}" class="logout">Sair</a>
+      <a href="{{ url_for('main.logout') }}" class="logout">Sair</a>
     </div>
   </header>
 
   <section>
-    <a href="{{ url_for('novo_produto') }}" class="button">Novo Produto</a>
+    <a href="{{ url_for('main.novo_produto') }}" class="button">Novo Produto</a>
     <table>
       <thead>
         <tr>
@@ -92,7 +92,7 @@
           <td>{{ '{:.2f}'.format(produto.preco) }}</td>
           <td>{{ produto.categoria.nome }}</td>
           <td>
-            <a href="{{ url_for('editar_produto', id=produto.id) }}" class="button" style="background:#4caf50;">Editar</a>
+            <a href="{{ url_for('main.editar_produto', id=produto.id) }}" class="button" style="background:#4caf50;">Editar</a>
           </td>
         </tr>
         {% else %}
